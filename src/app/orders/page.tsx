@@ -14,7 +14,7 @@ const getData = async () => {
   if (!res.ok) {throw new Error("Failed to fetch orders");}
   return res.json();
 }
-//const OrdersPage = async() => {
+
   const OrdersPage = () => {
   const {data: session} =useSession();
   const [data, setData] = useState<orderType[]>([])
