@@ -5,7 +5,6 @@ import { Inter } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { ReduxProvider } from '../store/provider'
-//import { Provider } from 'react-redux'
 import  AuthProvider  from '@/app/(auth)/AuthProvider/AuthProvider'
 
 const inter = Inter({ subsets: ["latin"] });
