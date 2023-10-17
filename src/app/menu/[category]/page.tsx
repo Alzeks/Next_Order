@@ -1,4 +1,3 @@
-//import { pizzas } from "@/data";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -12,14 +11,7 @@ async function getData() {
   }
  return res.json();
 }
-// export const getStaticPprops = async(context: any)=>{console.log('22222');
-//   const res = await fetch("http://localhost:3000/api/pizzas",)
-// const data = await res.json(); 
-// if(data)
-// console.log('2222222',res)
-// return{props:{},};
-// };
-// const CategoryPage = ({data}: any) => {
+
   const CategoryPage = async() => {
   const data = await getData();
   
