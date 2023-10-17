@@ -5,7 +5,6 @@ import React, { useEffect, useState } from "react";
 import { RootState } from '../../store/toolkit'
 import { useAppSelector } from "../../store/hook";
 import Checkout from "./Checkout";
-//import useSWR from "swr";
 import { useAppDispatch } from "@/store/hook";
 import { cartCounter } from '@/store/cartSlice'
 import { TProduct, Product1 } from "@/types"; 
@@ -17,21 +16,7 @@ const CartPage = () => {
   const [isLoading, setIsLoading] = useState(false);//usefect2
   const [reload, setReload] = useState(0)
   const dispatch = useAppDispatch();
-  
-  //   useEffect(()=>{
-  // //     //OLD WAY TO FETCH DATA   
-  //       const getData = async () => {
-  //         setIsLoading(true);
-  //         const res = await fetch("https://jsonplaceholder.typicode.com/posts", {
-  //           cache: "no-store",
-  //         });
-  //         if (!res.ok) {setErr(true);}  
-  //         const data = await res.json()
-  //         setData(data);
-  //         setIsLoading(false);
-  //       };
-  //       getData()
-  //   }, [])
+
   useEffect(() => {          //usefect2
     setIsLoading(true)
     fetch(`/api/cart/${user.user_id}`, {cache: "no-store",})
@@ -41,14 +26,6 @@ const CartPage = () => {
         setIsLoading(false)
       })
   }, [reload])
-  //const session = useSession();const router = useRouter();
-
-  //NEW WAY TO FETCH DATA
-  // const fetcher = (...args: any) => fetch(args ).then((res) => res.json());
-  // const { data, mutate, error, isLoading } = useSWR(
-  //   `/api/cart/${user.user_id}`,
-  //   fetcher
-  // );
   
   dispatch(cartCounter(data?.length))
   const deletePizza = async (id: number) => {
