@@ -1,7 +1,5 @@
-import jwt from 'jsonwebtoken'//{jwtPayload}
+import jwt from 'jsonwebtoken'
 import { NextResponse } from 'next/server';
-
-//interfase SignOption {expiresIn?: | number}
 
 export function signWithAccessToken(payload: any){
     const token = jwt.sign(payload, 'secret' , {expiresIn: '1h'})
