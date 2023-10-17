@@ -33,15 +33,8 @@ const Login = ({ url }) => {
     const password = e.target[1].value;
 
     signIn("credentials", { email, password, redirect: false });
-
-    //  async function login() {
-    //   try {await axios.post("http://localhost:3000/api/auth/login", {
-    //       email,password,});
-    //     router.push("/");
-    //   } catch (err) {setError(true);}
-    // };login()         
+  
   }
-  console.log('session', session);
   dispatch(addUser(
     { name: session.data?.user?.name, user_id: session.data?.user?.id }
   ))
