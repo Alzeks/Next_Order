@@ -14,8 +14,9 @@ export type TProduct = {
     price: number, quantity: number
   };
 
- export type Product1 = TProduct & {pizzas_id?: number, //options: string,quantity: number
+ export type Product1 = TProduct & 
+ {pizzas_id?: number,
 };
 export type TUser = {
-   name?: string, user_id?: number, // email: string, accessToken: string
+   name?: string, user_id?: number, 
 }
